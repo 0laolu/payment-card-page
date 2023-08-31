@@ -86,7 +86,7 @@
                 <div class="form__card-holder">
                     <label for="holder-input">Card Holder</label>
                     <input type="text" 
-                        onkeyup="moveInputFocus(event, 'fourthinput', 'holder-input', 'first-expiry-input')" 
+                        onkeyup="moveInputFocus(event, 'fourth-input', 'holder-input', 'first-expiry-input')" 
                         id="holder-input" 
                         required 
                         name="card-holder"
@@ -98,7 +98,7 @@
                         <label for="first-expiry-input">Expiration Date</label>
                         <div class="expiration-dates">
                             <div class="expiration-month">
-                                <select name="month" onkeyup="moveInputFocus(event, 'holder-input', 'first-expiry-input', 'second-expiry-input')" id="first-expiry-input">
+                                <select name="month" onclick="moveInputFocus(event, 'holder-input', 'first-expiry-input', 'second-expiry-input')" id="first-expiry-input">
                                     <option value=""></option>
                                     <option value="01">01</option>
                                     <option value="02">02</option>
@@ -116,7 +116,7 @@
                             </div>
         
                             <div class="expiration-year">
-                                <select name="year" onkeyup="moveInputFocus(event, 'first-expiry-input', 'second-expiry-input', 'cvv')" id="second-expiry-input">
+                                <select name="year" onclick="moveInputFocus(event, 'first-expiry-input', 'second-expiry-input', 'cvv')" id="second-expiry-input">
                                     <option value=""></option>
                                     <option value="2023">2023</option>
                                     <option value="2024">2024</option>
@@ -137,7 +137,15 @@
     
                     <div class="form__cvv-number">
                         <label for="cvv">CVV</label>
-                        <input type="text"  onkeyup="moveInputFocus(event, 'second-expiry-input', 'cvv', '')" id="cvv" required name="cvv-number">
+                        <input 
+                            type="text"  
+                            onkeyup="moveInputFocus(event, 'second-expiry-input', 'cvv', '')" 
+                            id="cvv" 
+                            minlength="3"
+                            maxlength="4"
+                            required 
+                            name="cvv-number"
+                        >
                     </div>
                 </div>
             </form>
