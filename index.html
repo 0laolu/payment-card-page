@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500&display=swap" rel="stylesheet"> 
+
+    <link rel="stylesheet" href="style.css">
+    <title>Payment Card Page</title>
+</head>
+<body>
+    <main class="payment-card-container">
+        <section class="visa-card">
+            <div class="visa-card__content">
+
+                <div class="visa-card__logo">
+                    <div class="visa-card__silver-mark"></div>
+                    <figure class="visa-text-logo">
+                        <img src="./images/Visa_Logo.png" alt="">
+                    </figure>
+                </div>
+
+                <div class="visa-card__cvv">
+                    <p>789</p>
+                </div>
+                <div class="visa-card-number">
+                    <p>1234 5678 9101 1121</p>
+                </div>
+
+                <div class="visa-card__identity">
+                    <div class="visa-card__holder">
+                        <h4 class="header">Card Holder</h4>
+                        <p>Oluwajohn Shmoe</p>
+                    </div>
+                    <div class="visa-card__expiration">
+                        <h4 class="header">Expires</h4>
+                        <p>12/23</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="form-section">
+            <form action="">
+                <div class="form__card-number">
+                    <label for="first-input">Card Number</label>
+                    <div class="card-number__input-container">
+                        <input type="number" id="first-input" onkeyup="" maxlength="4"  required name="form__card-number">
+                        <input type="number" id="second" onkeyup="" maxlength="4"  required name="form__card-number">
+                        <input type="number" id="third" onkeyup="" maxlength="4"  required name="form__card-number">
+                        <input type="number" id="fourth-input" onkeyup="" maxlength="4"  required name="form__card-number">
+                    </div>
+                </div>
+    
+                <div class="form__card-holder">
+                    <label for="holder-input">Card Holder</label>
+                    <input type="text" onkeyup="" id="holder-input" required name="card-holder">
+                </div>
+    
+                <div class="expiry-and-cvv">
+                    <div class="expiration-dates">
+                        <div class="expiration-month">
+                            <label for="first-expiry-input"></label>
+                            <select name="month" id="first-expiry-input" onkeyup="">
+                                <option value=""><!--dropdown icon maybe--></option>
+                                <option value="01"></option>
+                                <option value="02"></option>
+                                <option value="03"></option>
+                                <option value="04"></option>
+                                <option value="05"></option>
+                                <option value="06"></option>
+                                <option value="07"></option>
+                                <option value="08"></option>
+                                <option value="09"></option>
+                                <option value="10"></option>
+                                <option value="11"></option>
+                                <option value="12"></option>
+                            </select>
+                        </div>
+    
+                        <div class="expiration-year">
+                            <label for="second-expiry-input"></label>
+                            <select name="year" id="second-expiry-input" onkeyup="">
+                                <option value=""><!--dropdown icon maybe--></option>
+                                <option value="2023"></option>
+                                <option value="2024"></option>
+                                <option value="2025"></option>
+                                <option value="2026"></option>
+                                <option value="2027"></option>
+                                <option value="2028"></option>
+                                <option value="2029"></option>
+                                <option value="2030"></option>
+                                <option value="2031"></option>
+                                <option value="2032"></option>
+                                <option value="2033"></option>
+                                <option value="2034"></option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="form__cvv-number">
+                        <label for="cvv">CVV</label>
+                        <input type="number" id="cvv" onkeyup="" required name="cvv-number">
+                    </div>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <form action="">
+        <input onkeyup="foo(event, '', 'first', 'second')" maxlength="4" number id="first">
+        <br><br>
+        <input onkeyup="foo(event, 'first', 'second', 'third')" maxlength="4" number id="second">
+        <br><br>
+        <input onkeyup="foo(event, 'second', 'third', 'fourth')" maxlength="4" number id="third">
+        <br><br>
+        <input onkeyup="foo(event, 'third', 'fourth', '')" maxlength="4" number id="fourth">
+    </form> -->
+
+    <script src="index.js"></script>
+</body>
+</html>

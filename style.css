@@ -1,0 +1,105 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-family: 'Barlow', sans-serif; 
+}
+
+html {
+    font-size: 16px;
+}
+
+.payment-card-container {
+    width: 70%;
+    max-width: 700px;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.visa-card {
+    border: 1px solid lightgrey;
+    background-color: white;
+    width: 85%;
+    padding: 1.5rem 0;
+    margin: 0 auto;
+    border-radius: 15px;
+    position: absolute;
+    top: -170px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.visa-card__content {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.visa-card__logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.visa-card__silver-mark {
+    border: 1px solid midnightblue;
+    border-radius: 7px;
+    padding: 1.5rem 2.2rem;
+}
+
+.visa-text-logo img {
+    width: 60px;
+    max-width: 100%;
+    height: auto;
+}
+
+.visa-card__cvv {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1.2rem 0 0.5rem 0;
+    text-align: end;
+}
+
+.visa-card__cvv p {
+    font-size: 1.2rem;
+}
+
+.visa-card-number {
+    width: 100%;
+    padding: 0.8rem 0 1rem 0;
+}
+
+.visa-card-number p {
+    font-size: 2.3rem;
+}
+
+.visa-card__identity {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.visa-card__identity .header {
+    font-size: 0.8rem;
+    letter-spacing: 0.03rem;
+}
+
+.visa-card__identity p {
+    padding: 0.5rem 0;
+    font-size: 1.4rem;
+}
+
+/* form section */
+
+.form-section {
+    border: 1px solid black;
+    width: 95%;
+    padding: 10rem 0 5rem 0;
+    margin: 0 auto;
+    border-radius: 15px;
+    position: relative;
+}
