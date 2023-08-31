@@ -122,6 +122,12 @@ html {
     outline: none;
 }
 
+.form__input-wrapper input:focus,
+.form__input-wrapper select:focus {
+    border: 1px solid transparent;
+    box-shadow: 0px 0px 5px 1px skyblue;
+}
+
 .card-number__input-container {
     display: flex;
     justify-content: space-between;
