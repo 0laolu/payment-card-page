@@ -1,10 +1,10 @@
 
-// function doo(event) {
-//     if(isNaN(event.key) && event.key !== "Backspace") {
-//         event.preventDefault()
-//         return false
-//     }
-// }
+function numberValidation(event) {
+    if(isNaN(event.key) && event.key !== "Backspace") {
+        event.preventDefault()
+        return false
+    }
+}
 
 function moveInputFocus(event, previousInput, currentInput, nextInput) {
     const length = document.getElementById(currentInput).value.length

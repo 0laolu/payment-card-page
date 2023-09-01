@@ -165,3 +165,18 @@ html {
 .expiration-dates__input-wrapper select {
     width: 90%;
 }
+
+button {
+    background-color: rgb(14, 14, 134);
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 900;
+    width: 100%;
+    padding: 1rem 0;
+    margin-top: 2rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 0.04rem;
+    cursor: pointer;
+}

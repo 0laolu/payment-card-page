@@ -49,7 +49,8 @@
                     <label for="first-input">Card Number</label>
                     <div class="card-number__input-container">
                         <input 
-                            type="text" 
+                            type="text"
+                            onkeydown="numberValidation(event)" 
                             onkeyup="moveInputFocus(event, '', 'first-input', 'second-input')" 
                             maxlength="4"
                             id="first-input"  
@@ -57,7 +58,8 @@
                             name="form__card-number"
                         >
                         <input 
-                            type="text" 
+                            type="text"
+                            onkeydown="numberValidation(event)" 
                             onkeyup="moveInputFocus(event, 'first-input', 'second-input', 'third-input')" 
                             maxlength="4"
                             id="second-input" 
@@ -65,7 +67,8 @@
                             name="form__card-number"
                         >
                         <input 
-                            type="text" 
+                            type="text"
+                            onkeydown="numberValidation(event)" 
                             onkeyup="moveInputFocus(event, 'second-input', 'third-input', 'fourth-input')" 
                             maxlength="4"
                             id="third-input"  
@@ -73,7 +76,8 @@
                             name="form__card-number"
                         >
                         <input 
-                            type="text" 
+                            type="text"
+                            onkeydown="numberValidation(event)" 
                             onkeyup="moveInputFocus(event, 'third-input', 'fourth-input', 'holder-input')" 
                             maxlength="4"
                             id="fourth-input"  
@@ -139,6 +143,7 @@
                         <label for="cvv">CVV</label>
                         <input 
                             type="text"  
+                            onkeydown="numberValidation(event)"
                             onkeyup="moveInputFocus(event, 'second-expiry-input', 'cvv', '')" 
                             id="cvv" 
                             minlength="3"
@@ -148,6 +153,7 @@
                         >
                     </div>
                 </div>
+                <button>Submit</button>
             </form>
         </section>
     </main>
