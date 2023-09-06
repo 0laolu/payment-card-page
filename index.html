@@ -24,21 +24,26 @@
                 </div>
 
                 <div class="visa-card__cvv">
-                    <p>789</p>
+                    <p></p>
                 </div>
                 <div class="visa-card-number">
-                    <p>1234 5678 9101 1121</p>
+                    <p onkeydown="numberValidation(event)" id="card-digits">
+                        <span class="first"></span>
+                        <span class="second"></span>
+                        <span class="third"></span>
+                        <span class="fourth"></span>
+                    </p>
                 </div>
 
                 <div class="visa-card__identity">
                     <div class="visa-card__holder">
                         <h4 class="header">Card Holder</h4>
-                        <p>Oluwajohn Shmoe</p>
+                        <p></p>
                     </div>
                     <div class="visa-card__expiration">
                         <h4 class="header">Expires</h4>
-                        <p>12/23</p>
-                    </div>
+                        <p></p>
+                    </di
                 </div>
             </div>
         </section>
@@ -102,7 +107,7 @@
                         <label for="first-expiry-input">Expiration Date</label>
                         <div class="expiration-dates">
                             <div class="expiration-month">
-                                <select name="month" onclick="moveInputFocus(event, 'holder-input', 'first-expiry-input', 'second-expiry-input')" id="first-expiry-input">
+                                <select name="month" onclick="moveInputFocus(event, 'holder-input', 'first-expiry-input', 'second-expiry-input')" id="first-expiry-input" required> 
                                     <option value=""></option>
                                     <option value="01">01</option>
                                     <option value="02">02</option>
@@ -120,20 +125,20 @@
                             </div>
         
                             <div class="expiration-year">
-                                <select name="year" onclick="moveInputFocus(event, 'first-expiry-input', 'second-expiry-input', 'cvv')" id="second-expiry-input">
+                                <select name="year" onclick="moveInputFocus(event, 'first-expiry-input', 'second-expiry-input', 'cvv')" id="second-expiry-input" required>
                                     <option value=""></option>
-                                    <option value="2023">2023</option>
-                                    <option value="2024">2024</option>
-                                    <option value="2025">2025</option>
-                                    <option value="2026">2026</option>
-                                    <option value="2027">2027</option>
-                                    <option value="2028">2028</option>
-                                    <option value="2029">2029</option>
-                                    <option value="2030">2030</option>
-                                    <option value="2031">2031</option>
-                                    <option value="2032">2032</option>
-                                    <option value="2033">2033</option>
-                                    <option value="2034">2034</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                    <option value="32">32</option>
+                                    <option value="33">33</option>
+                                    <option value="34">34</option>
                                 </select>
                             </div>
                         </div>
@@ -148,7 +153,7 @@
                             id="cvv" 
                             minlength="3"
                             maxlength="4"
-                            required 
+                            required
                             name="cvv-number"
                         >
                     </div>
@@ -178,14 +183,23 @@
 
 
     <!-- <form action="">
-        <input onkeydown="doo(event)" onkeyup="foo(event, '', 'first', 'second')" maxlength="4" number id="first">
+        <input onkeydown="doo(event)" onkeyup="foo(event, '', 'first', 'second')" maxlength="4" class="input-field" id="first">
         <br><br>
-        <input onkeydown="doo(event)" onkeyup="foo(event, 'first', 'second', 'third')" maxlength="4" number id="second">
+        <input onkeydown="doo(event)" onkeyup="foo(event, 'first', 'second', 'third')" maxlength="4" class="input-field" id="second">
         <br><br>
-        <input onkeydown="doo(event)" onkeyup="foo(event, 'second', 'third', 'fourth')" maxlength="4" number id="third">
+        <input onkeydown="doo(event)" onkeyup="foo(event, 'second', 'third', 'fourth')" maxlength="4" class="input-field" id="third">
         <br><br>
-        <input onkeydown="doo(event)" onkeyup="foo(event, 'third', 'fourth', '')" maxlength="4" number id="fourth">
-    </form> -->
+        <input onkeydown="doo(event)" onkeyup="foo(event, 'third', 'fourth', '')" maxlength="4" class="input-field" id="fourth">
+    </form>
+
+    <div class="content">
+        <p  id="content">
+            <span class="first"></span>
+            <span class="second"></span>
+            <span class="third"></span>
+            <span class="fourth"></span>
+        </p>
+    </div> -->
 
     <script src="index.js"></script>
 </body>
