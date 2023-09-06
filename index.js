@@ -1,4 +1,5 @@
 
+
 function numberValidation(event) {
     if(isNaN(event.key) && event.key !== "Backspace") {
         event.preventDefault()
@@ -15,7 +16,23 @@ function moveInputFocus(event, previousInput, currentInput, nextInput) {
     const cardHolder = document.querySelector(".visa-card__holder p")
     const expiryDate = document.querySelector(".visa-card__expiration p")
     const cvvNumber = document.querySelector(".visa-card__cvv p")
-    console.log(expiryDate)
+    const cardLogo = document.querySelector(".visa-text-logo img")
+    console.log(cardLogo)
+
+    const displayCardImage = () => {
+        if(event.target.value[0] === "2" || event.target.value[0] === "5") {
+            cardLogo.setAttribute("src", "./images/Mastercard_logo.jpg")
+            cardLogo.setAttribute("width", "100px")
+        } else if(event.target.value[0] === "4") {
+            cardLogo.setAttribute("src", "./images/Visa_Logo.png")
+            cardLogo.setAttribute("width", "70px")
+        } else if(event.target.value[0] === "3") {
+            cardLogo.setAttribute("src", "./images/american-express-logo.png")
+            cardLogo.setAttribute("width", "100px")
+        }
+    }
+    
+    
  
     if(!isNaN(event.key)) {
         if(event.key !== ' ') {
@@ -25,6 +42,7 @@ function moveInputFocus(event, previousInput, currentInput, nextInput) {
 
     if(event.target.id === "first-input") {
         cardDigits[0].textContent = event.target.value
+        displayCardImage()
     } else if(event.target.id === "second-input") {
         cardDigits[1].textContent = event.target.value        
     } else if(event.target.id === "third-input") {
@@ -56,7 +74,6 @@ function moveInputFocus(event, previousInput, currentInput, nextInput) {
         if(nextInput !== '') {
             document.getElementById(nextInput).focus()
         }
-        cardNumberArray.push('  ')
     }
 
     if(event.key === "Backspace" && length == 0) {
