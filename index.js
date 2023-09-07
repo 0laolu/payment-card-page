@@ -5,17 +5,12 @@ function numberValidation(event) {
         event.preventDefault()
         if(event.target.name === "form__card-number") {
             document.querySelector(".card-number__error-message").textContent = "invalid input"
-        } else if(event.target.id === "cvv") {
-            document.querySelector(".cvv-number__error-message").textContent = "invalid input"
-        }
+        } 
         return false
     } else {
         if(event.target.name === "form__card-number") {
             document.querySelector(".card-number__error-message").textContent = ""
-        } else if(event.target.id === "cvv") {
-            document.querySelector(".cvv-number__error-message").textContent = ""
-        }
-    
+        }  
     }
 }
 
@@ -78,6 +73,13 @@ function moveInputFocus(event, previousInput, currentInput, nextInput) {
 
     if(event.target.id === "cvv") {
         cvvNumber.textContent = event.target.value
+        if(event.target.id === "cvv" && (isNaN(event.key) && event.key !== "Backspace")) {
+            document.querySelector(".cvv-number__error-message").textContent = "invalid input"
+        } else if(event.target.value.length < 3) {
+            document.querySelector(".cvv-number__error-message").textContent = "not less than 3 characters"
+        } else {
+            document.querySelector(".cvv-number__error-message").textContent = ""
+        }
     }
 
     console.log(event)
