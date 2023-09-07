@@ -134,14 +134,26 @@ html {
     box-shadow: 0px 0px 5px 1px skyblue;
 }
 
+.form__card-number {
+    padding-bottom: 2rem;
+}
+
 .card-number__input-container {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 2rem;
 }
 
 .card-number__input-container input {
     width: 23%;
+}
+
+.card-number__error-message,
+.cvv-number__error-message {
+    color: red;
+    padding-top: 0.3rem;
+    font-size: 0.8rem;
+    /* text-transform: lowercase; */
+    word-spacing: 0.1rem;
 }
 
 .form__card-holder input {

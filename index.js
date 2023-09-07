@@ -3,7 +3,19 @@
 function numberValidation(event) {
     if(isNaN(event.key) && event.key !== "Backspace") {
         event.preventDefault()
+        if(event.target.name === "form__card-number") {
+            document.querySelector(".card-number__error-message").textContent = "invalid input"
+        } else if(event.target.id === "cvv") {
+            document.querySelector(".cvv-number__error-message").textContent = "invalid input"
+        }
         return false
+    } else {
+        if(event.target.name === "form__card-number") {
+            document.querySelector(".card-number__error-message").textContent = ""
+        } else if(event.target.id === "cvv") {
+            document.querySelector(".cvv-number__error-message").textContent = ""
+        }
+    
     }
 }
 
@@ -17,8 +29,7 @@ function moveInputFocus(event, previousInput, currentInput, nextInput) {
     const expiryDate = document.querySelector(".visa-card__expiration p")
     const cvvNumber = document.querySelector(".visa-card__cvv p")
     const cardLogo = document.querySelector(".visa-text-logo img")
-    console.log(cardLogo)
-
+    
     const displayCardImage = () => {
         if(event.target.value[0] === "2" || event.target.value[0] === "5") {
             cardLogo.setAttribute("src", "./images/Mastercard_logo.jpg")
@@ -29,6 +40,8 @@ function moveInputFocus(event, previousInput, currentInput, nextInput) {
         } else if(event.target.value[0] === "3") {
             cardLogo.setAttribute("src", "./images/american-express-logo.png")
             cardLogo.setAttribute("width", "100px")
+        } else {
+            cardLogo.setAttribute("src", "")
         }
     }
     
