@@ -1,21 +1,32 @@
 
 
 function numberValidation(event) {
-    if(isNaN(event.key) && event.key !== "Backspace") {
+    // prevents non number inputs from being filled in card number inputs
+    if((isNaN(event.key) && event.key !== "Backspace") || event.key === ' ') {
         event.preventDefault()
+
+    // throws an error when a non number is filled in the card number inputs
         if(event.target.name === "form__card-number") {
             document.querySelector(".card-number__error-message").textContent = "invalid input"
         } 
+
+    // removes error message if a user has entered 16 characters in number field 
+        if(event.target.id === "fourth-input" && event.target.value.length === 4) {
+            document.querySelector(".card-number__error-message").textContent = ""
+        }
         return false
+    } else if((isNaN(event.key) && event.key !== "Backspace") || event.key !== ' ') {  // removes error message when a user fills a number after typing a non number
+        document.querySelector(".card-number__error-message").textContent = ""
     } else {
-        if(event.target.name === "form__card-number") {
+        if(event.target.name === "form__card-number" && event.target.value.length === 4) {  // removes error message when a user fills a number after typing a non number
             document.querySelector(".card-number__error-message").textContent = ""
         }  
     }
 }
 
-let cardNumberArray = []
 
+
+// ensures auto focus on the next input when a user is done filling one 
 function moveInputFocus(event, previousInput, currentInput, nextInput) {
     const length = document.getElementById(currentInput).value.length
     const maxLength = document.getElementById(currentInput).getAttribute("maxlength")
@@ -40,13 +51,6 @@ function moveInputFocus(event, previousInput, currentInput, nextInput) {
         }
     }
     
-    
- 
-    if(!isNaN(event.key)) {
-        if(event.key !== ' ') {
-            cardNumberArray.push(document.getElementById(currentInput).value)
-        }
-    } 
 
     if(event.target.id === "first-input") {
         cardDigits[0].textContent = event.target.value
@@ -82,14 +86,12 @@ function moveInputFocus(event, previousInput, currentInput, nextInput) {
         }
     }
 
-    console.log(event)
-    
 
     if(length == maxLength) {
         if(nextInput !== '') {
             document.getElementById(nextInput).focus()
         }
-    }
+    } 
 
     if(event.key === "Backspace" && length == 0) {
         if(previousInput !== '') {
@@ -121,6 +123,5 @@ function moveInputFocus(event, previousInput, currentInput, nextInput) {
             document.getElementById(currentInput).focus()
         }
     }
-    
 }
 
