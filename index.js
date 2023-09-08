@@ -63,8 +63,14 @@ function moveInputFocus(event, previousInput, currentInput, nextInput) {
         cardDigits[3].textContent = event.target.value
     }
 
+    // ensures the user enters at least a first name and last name in the input
     if(event.target.id === "holder-input") {
         cardHolder.textContent = event.target.value
+        if(!event.target.value.includes(' ')) {
+            document.querySelector(".card-holder__error-message").textContent = "must be at least firstname and lastname"
+        } else {
+            document.querySelector(".card-holder__error-message").textContent = ""
+        }
     }
 
 

@@ -148,6 +148,7 @@ html {
 }
 
 .card-number__error-message,
+.card-holder__error-message,
 .cvv-number__error-message {
     color: red;
     padding-top: 0.3rem;
@@ -156,9 +157,12 @@ html {
     word-spacing: 0.1rem;
 }
 
+.form__card-holder {
+    margin-bottom: 2rem;
+}
+
 .form__card-holder input {
     width: 100%;
-    margin-bottom: 2rem;
 }
 
 .expiry-and-cvv {
