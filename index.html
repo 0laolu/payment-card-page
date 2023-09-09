@@ -11,7 +11,12 @@
     <link rel="stylesheet" href="style.css">
     <title>Payment Card Page</title>
 </head>
-<body>
+<body class="body">
+    <div class="alert-message">
+        <div class="alert-message__content">
+            <p>Your payment was successful</p>
+        </div>
+    </div>
     <main class="payment-card-container">
         <section class="visa-card">
             <div class="visa-card__content">
@@ -49,7 +54,7 @@
         </section>
 
         <section class="form-section">
-            <form action="" class="form__input-wrapper">
+            <form onsubmit="submitForm(event)" class="form__input-wrapper">
                 <div class="form__card-number">
                     <label for="first-input">Card Number</label>
                     <div class="card-number__input-container">
@@ -166,44 +171,7 @@
         </section>
     </main>
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- <form action="">
-        <input onkeydown="doo(event)" onkeyup="foo(event, '', 'first', 'second')" maxlength="4" class="input-field" id="first">
-        <br><br>
-        <input onkeydown="doo(event)" onkeyup="foo(event, 'first', 'second', 'third')" maxlength="4" class="input-field" id="second">
-        <br><br>
-        <input onkeydown="doo(event)" onkeyup="foo(event, 'second', 'third', 'fourth')" maxlength="4" class="input-field" id="third">
-        <br><br>
-        <input onkeydown="doo(event)" onkeyup="foo(event, 'third', 'fourth', '')" maxlength="4" class="input-field" id="fourth">
-    </form>
-
-    <div class="content">
-        <p  id="content">
-            <span class="first"></span>
-            <span class="second"></span>
-            <span class="third"></span>
-            <span class="fourth"></span>
-        </p>
-    </div> -->
-
     <script src="index.js"></script>
 </body>
 </html>
+<!-- // removes error message if a user has filled the fourth input and press a non number key to focus on the next input -->

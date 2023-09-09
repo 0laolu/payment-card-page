@@ -9,14 +9,57 @@
 html {
     font-size: 16px;
 }
-/* 
-#content {
-    padding: 0.5rem;
-    margin: 1rem 0;
-    border: none;
-    outline: none;
-    cursor: pointer;
-} */
+
+body {
+    position: relative;
+}
+
+.alert-message {
+    visibility: hidden;
+    /* display: none; */
+    background-color: white;
+    border: 1px solid green;
+    padding: 1rem 0;
+    border-radius: 8px;
+    text-align: center;
+    width: 40%;
+    position: absolute;
+    top: -35%;
+    right: 0%;
+    z-index: 100;
+}
+
+.alert-message__content {
+    color: green;
+    font-weight: 500;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.alert-message__content p {
+    font-size: 1.5rem;
+}
+
+.alert-message.active {
+    visibility: visible;
+    /* display: block; */
+    animation-name: paymentSuccess;
+    animation-duration: 1.5s;
+}
+
+@keyframes paymentSuccess {
+    from {
+        visibility: hidden;
+        /* display: none; */
+        top: -40%;
+    }
+    to {
+        visibility: visible;
+        /* display: block; */
+        top: -35%;
+    }
+}
+
 .payment-card-container {
     width: 70%;
     max-width: 650px;

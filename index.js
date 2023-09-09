@@ -24,8 +24,6 @@ function numberValidation(event) {
     }
 }
 
-
-
 // ensures auto focus on the next input when a user is done filling one 
 function moveInputFocus(event, previousInput, currentInput, nextInput) {
     const length = document.getElementById(currentInput).value.length
@@ -48,6 +46,14 @@ function moveInputFocus(event, previousInput, currentInput, nextInput) {
             cardLogo.setAttribute("width", "100px")
         } else {
             cardLogo.setAttribute("src", "")
+           
+            if((isNaN(event.key) && event.key !== "Backspace") || event.key === ' ') {
+                document.querySelector(".card-number__error-message").textContent = "invalid input"
+            } else if(event.target.value.length === 0) {
+                document.querySelector(".card-number__error-message").textContent = ""
+            } else {
+                document.querySelector(".card-number__error-message").textContent = "invalid provider"
+            }
         }
     }
     
@@ -62,6 +68,8 @@ function moveInputFocus(event, previousInput, currentInput, nextInput) {
     } else if(event.target.id === "fourth-input") {
         cardDigits[3].textContent = event.target.value
     }
+
+
 
     // ensures the user enters at least a first name and last name in the input
     if(event.target.id === "holder-input") {
@@ -130,4 +138,3 @@ function moveInputFocus(event, previousInput, currentInput, nextInput) {
         }
     }
 }
-
