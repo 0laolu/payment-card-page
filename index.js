@@ -10,7 +10,7 @@ function numberValidation(event) {
             document.querySelector(".card-number__error-message").textContent = "invalid input"
         } 
 
-    // removes error message if a user has entered 16 characters in number field 
+    // removes error message if a user has filled the fourth input and press a non number key to focus on the next input
         if(event.target.id === "fourth-input" && event.target.value.length === 4) {
             document.querySelector(".card-number__error-message").textContent = ""
         }
@@ -23,6 +23,7 @@ function numberValidation(event) {
         }  
     }
 }
+
 
 // ensures auto focus on the next input when a user is done filling one 
 function moveInputFocus(event, previousInput, currentInput, nextInput) {
@@ -69,6 +70,31 @@ function moveInputFocus(event, previousInput, currentInput, nextInput) {
         cardDigits[3].textContent = event.target.value
     }
 
+    // ensures that the second and third inputs contain at least 4 characters
+    if(document.getElementById(currentInput).name == "form__card-number" && previousInput !== '') {
+        if(document.getElementById(previousInput).value.length !== 4) {    
+             // throws an error when characters are incomplete
+            document.querySelector(".card-number__error-message").textContent = "field must be at least 4 characters"
+            document.getElementById(previousInput).classList.add("error")
+        } else {
+            // removes the error when characters are complete
+            document.getElementById(currentInput).classList.remove("error")  
+        }
+    } else if(document.getElementById(currentInput).name == "form__card-number" && previousInput === '') {      // ensures that the first input contain at least 4 characters
+        if(document.getElementById(currentInput).value.length === 4) {
+            // removes the error when characters are complete
+            document.getElementById(currentInput).classList.remove("error")     
+        }
+    } else if(document.getElementById(currentInput).name == "card-holder" && previousInput === 'fourth-input') {    // ensures that the fourth input contain at least 4 characters
+        if(document.getElementById(previousInput).value.length !== 4) {
+            // throws an error when characters are incomplete
+            document.querySelector(".card-number__error-message").textContent = "field must be at least 4 characters"
+            document.getElementById(previousInput).classList.add("error")
+        } else {
+            // removes the error when characters are complete
+            document.getElementById(currentInput).classList.remove("error")     
+        }
+    }
 
 
     // ensures the user enters at least a first name and last name in the input

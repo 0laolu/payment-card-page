@@ -171,6 +171,10 @@ body {
     outline: none;
 }
 
+.form__input-wrapper input.error {
+    border: 1px solid red;
+}
+
 .form__input-wrapper input:focus,
 .form__input-wrapper select:focus {
     border: 1px solid transparent;
