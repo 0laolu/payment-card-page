@@ -61,7 +61,7 @@ body {
 .payment-card-container {
     width: 70%;
     max-width: 650px;
-    margin: 15rem auto 0 auto;
+    margin: 15rem auto 3rem auto;
     position: relative;
 }
 
@@ -225,7 +225,6 @@ body {
     color: red;
     padding-top: 0.3rem;
     font-size: 0.8rem;
-    /* text-transform: lowercase; */
     word-spacing: 0.1rem;
 }
 
@@ -273,4 +272,78 @@ button {
     border-radius: 5px;
     letter-spacing: 0.04rem;
     cursor: pointer;
+}
+
+
+@media screen and (max-width: 1240px) {
+    .payment-card-container {
+        width: 95%;
+        margin-bottom: 5rem;
+    }
+
+    .visa-card {
+        width: 95%;
+    }
+
+
+    .form-section {
+        width: 100%;
+    }
+
+    .visa-card__cvv {
+        padding: 1.2rem 0rem 0.5rem 0;
+    }
+
+    .visa-card-number p {
+        font-size: 2rem;
+    }
+
+    .visa-card__identity p {
+        font-size: 1.2em;
+    }
+
+    .form__input-wrapper label {
+        font-size: 0.9rem;
+    }
+
+    .expiration-dates__input-wrapper {
+        width: 50%;
+    }
+
+    .form__cvv-number {
+        width: 45%;
+    }
+
+    .form__cvv-number input {
+        width: 100%;
+    }
+
+    /*
+
+
+    .expiry-and-cvv {
+    display: flex;
+    justify-content: space-between;
+}
+
+.expiration-dates__input-wrapper {
+    width: 45%;
+}
+
+.expiration-dates {
+    width: 100%;
+    display: flex;
+}
+
+.expiration-month, 
+.expiration-year {
+    width: 100%;
+}
+
+.expiration-dates__input-wrapper select {
+    width: 90%;
+}
+
+
+    */
 }
