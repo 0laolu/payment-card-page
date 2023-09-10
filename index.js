@@ -164,3 +164,9 @@ function moveInputFocus(event, previousInput, currentInput, nextInput) {
         }
     }
 }
+
+function submitForm(event) {
+    event.preventDefault();
+    const alertMessage = document.querySelector(".alert-message")
+    alertMessage.classList.add("active")
+}
